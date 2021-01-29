@@ -14,19 +14,24 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --filesystem=xdg-documents
-  - --env=PATH=/app/texlive/bin/x86_64-linux:/app/bin:/usr/bin  # required to find texlive binaries
+  - --env=PATH=/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin  # required to find texlive binaries
   - --env=TEXMFCACHE=$XDG_CACHE_HOME
 cleanup:
   - /include
   - '*.la'
   - '*.a'
 
+add-extensions:
+  org.freedesktop.Sdk.Extension.texlive:
+    version: '20.08'
+    directory: texlive # this is relative to /app
+    no-autodownload: true
+
 modules:
   - name: texlive
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
-      - cp -ra /usr/lib/sdk/texlive/* /app/texlive
 
   - name: texmaker
     buildsystem: qmake
