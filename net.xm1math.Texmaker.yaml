@@ -15,7 +15,7 @@ finish-args:
   - --device=dri
   - --filesystem=xdg-documents
   - --env=PATH=/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin  # required to find texlive binaries
-  - --env=LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/5.38.0/x86_64-linux/CORE
+  - --env=LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/5.38.0/aarch64_linux/CORE:/app/texlive/lib/perl5/5.38.0/x86_64-linux/CORE
   - --env=PERL5LIB=/app/texlive/lib/perl5/5.38.0:/app/texlive/lib/perl5/site_perl/5.38.0
   - --env=TEXMFCACHE=$XDG_CACHE_HOME
 cleanup:
