@@ -42,10 +42,11 @@ modules:
     config-opts:
       - DESKTOPDIR=/app/share/applications
       - METAINFODIR=/app/share/metainfo
-      - ICONDIR=/app/share/icons/hicolor/256x256/apps/
       - INCLUDEPATH+=/app/include/QtWebEngineWidgets
       - LIBS+=-L/app/lib
       - CONFIG+=force_debug_info
+    post-install:
+      - install -Dm644 datas/distrib/linux/texmaker.svg /app/share/icons/hicolor/scalable/apps/texmaker.svg
     sources:
       - type: archive
         url: https://www.xm1math.net/texmaker/texmaker-6.0.0.tar.bz2
