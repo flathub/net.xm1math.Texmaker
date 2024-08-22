@@ -35,7 +35,7 @@ modules:
       - install -d /app/texlive
 
   - name: texmaker
-    buildsystem: qmake
+    buildsystem: cmake-ninja
     build-options:
       env:
         QMAKEPATH: /app/lib
