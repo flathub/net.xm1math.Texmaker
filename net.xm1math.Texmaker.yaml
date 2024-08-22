@@ -1,9 +1,9 @@
 app-id: net.xm1math.Texmaker
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: 6.7
 sdk: org.kde.Sdk
 base: io.qt.qtwebengine.BaseApp
-base-version: 5.15-23.08
+base-version: 6.7
 command: texmaker
 rename-desktop-file: texmaker.desktop
 rename-appdata-file: texmaker.metainfo.xml
@@ -48,8 +48,8 @@ modules:
       - CONFIG+=force_debug_info
     sources:
       - type: archive
-        url: https://www.xm1math.net/texmaker/texmaker-5.1.4.tar.bz2
-        sha256: 320504d62b71b591c06b7d0b1202ac750a3112fe2ca328e30580055eb308fea6
+        url: https://www.xm1math.net/texmaker/texmaker-6.0.0.tar.bz2
+        sha256: 977ce580e25c1ab6e0bc3da103be0b43ebf60b8ce0d27273104fdd7f586177fc
         x-checker-data:
           type: html
           url: https://www.xm1math.net/texmaker/download.html
