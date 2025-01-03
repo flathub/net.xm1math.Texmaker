@@ -1,9 +1,9 @@
 app-id: net.xm1math.Texmaker
 runtime: org.kde.Platform
-runtime-version: 6.7
+runtime-version: 6.8
 sdk: org.kde.Sdk
 base: io.qt.qtwebengine.BaseApp
-base-version: 6.7
+base-version: 6.8
 command: texmaker
 rename-desktop-file: texmaker.desktop
 rename-appdata-file: texmaker.metainfo.xml
@@ -25,7 +25,7 @@ cleanup-commands:
 
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '23.08'
+    version: '24.08'
     directory: texlive # this is relative to /app
 
 modules:
