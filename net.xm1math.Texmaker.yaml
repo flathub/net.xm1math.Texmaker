@@ -47,6 +47,7 @@ modules:
       - CONFIG+=force_debug_info
     post-install:
       - install -Dm644 datas/distrib/linux/texmaker.svg /app/share/icons/hicolor/scalable/apps/texmaker.svg
+      - ./addfonts.sh
     sources:
       - type: archive
         url: https://www.xm1math.net/texmaker/texmaker-6.0.0.tar.bz2
@@ -56,3 +57,13 @@ modules:
           url: https://www.xm1math.net/texmaker/download.html
           version-pattern: DOWNLOAD version ([\d\.]+)
           url-template: https://www.xm1math.net/texmaker/texmaker-$version.tar.bz2
+      - type: script
+        commands:
+          - find  /usr/lib/sdk/texlive/texmf-dist/fonts -type f -regex ".*\.\(ttf\|otf\)$" >TEXfonts.txt
+          - mkdir -p /app/share/fonts
+          - |
+             while IFS= read -r linea; do
+                n_ruta="${linea/\/usr\/lib\/sdk\/texlive/\/app\/texlive}"
+                ln --target-directory=/app/share/fonts -s "$n_ruta"
+             done < TEXfonts.txt
+        dest-filename: addfonts.sh
