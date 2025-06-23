@@ -1,9 +1,9 @@
 app-id: net.xm1math.Texmaker
 runtime: org.kde.Platform
-runtime-version: 6.8
+runtime-version: 6.9
 sdk: org.kde.Sdk
 base: io.qt.qtwebengine.BaseApp
-base-version: 6.8
+base-version: 6.9
 command: texmaker
 rename-desktop-file: texmaker.desktop
 rename-appdata-file: texmaker.metainfo.xml
@@ -49,8 +49,8 @@ modules:
       - install -Dm644 datas/distrib/linux/texmaker.svg /app/share/icons/hicolor/scalable/apps/texmaker.svg
     sources:
       - type: archive
-        url: https://www.xm1math.net/texmaker/texmaker-6.0.0.tar.bz2
-        sha256: 977ce580e25c1ab6e0bc3da103be0b43ebf60b8ce0d27273104fdd7f586177fc
+        url: https://www.xm1math.net/texmaker/texmaker-6.0.1.tar.bz2
+        sha256: b8c235df0cd8fd7714cd70d3b5ee363163b0254a9dea9180781b8f0e2e46caf6
         x-checker-data:
           type: html
           url: https://www.xm1math.net/texmaker/download.html
