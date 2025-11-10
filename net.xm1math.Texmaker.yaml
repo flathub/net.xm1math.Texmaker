@@ -14,7 +14,6 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --filesystem=xdg-documents
-  - --env=PATH=/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin  # required to find texlive binaries
   - --env=TEXMFCACHE=$XDG_CACHE_HOME
 cleanup:
   - /include
@@ -60,6 +59,8 @@ modules:
       - CONFIG+=force_debug_info
     post-install:
       - install -Dm644 datas/distrib/linux/texmaker.svg /app/share/icons/hicolor/scalable/apps/texmaker.svg
+      - mv /app/bin/texmaker /app/bin/texmaker-bin
+      - install -m755 texmaker-wrapper /app/bin/texmaker
     sources:
       - type: archive
         url: https://www.xm1math.net/texmaker/texmaker-6.0.1.tar.bz2
@@ -69,3 +70,5 @@ modules:
           url: https://www.xm1math.net/texmaker/download.html
           version-pattern: DOWNLOAD version ([\d\.]+)
           url-template: https://www.xm1math.net/texmaker/texmaker-$version.tar.bz2
+      - type: file
+        path: wrapper/texmaker-wrapper
