@@ -16,4 +16,4 @@ fi
 
 export PATH
 
-exec texmacs-bin "$@"
+exec texmaker-bin "$@"
