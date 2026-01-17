@@ -1,9 +1,9 @@
 app-id: net.xm1math.Texmaker
 runtime: org.kde.Platform
-runtime-version: 6.9
+runtime-version: 6.10
 sdk: org.kde.Sdk
 base: io.qt.qtwebengine.BaseApp
-base-version: 6.9
+base-version: 6.10
 command: texmaker
 rename-desktop-file: texmaker.desktop
 rename-appdata-file: texmaker.metainfo.xml
@@ -24,7 +24,7 @@ cleanup-commands:
 
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '24.08'
+    version: '25.08'
     directory: texlive # this is relative to /app
 
 modules:
@@ -43,8 +43,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/ghostscript-10.05.0.tar.gz
-        sha512: e6890e72e7734cfe9b923a7bafae9c38a3ccca650b51374e403b6754f972dbca8278f44b3e3b32465309aacc73382dffae1b8deccb5469ff3637f7f3353dace9
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostpdl-10.06.0.tar.gz
+        sha256: 80dd50abf5970f49140ca7c0c19475cc2707437f89e8a825e670ba101003f1d8
         
   - name: texmaker
     buildsystem: cmake-ninja
@@ -72,3 +72,6 @@ modules:
           url-template: https://www.xm1math.net/texmaker/texmaker-$version.tar.bz2
       - type: file
         path: wrapper/texmaker-wrapper
+      - type: patch
+        path: CMakeLists.txt.patch
+        
