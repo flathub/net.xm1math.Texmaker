@@ -72,3 +72,6 @@ modules:
           url-template: https://www.xm1math.net/texmaker/texmaker-$version.tar.bz2
       - type: file
         path: wrapper/texmaker-wrapper
+      - type: patch
+        path: CMakeLists.txt.patch
+        
