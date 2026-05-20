@@ -1,5 +1,5 @@
 --- a/CMakeLists.txt	2026-01-17 16:23:42.056121262 -0500
-+++ b/CMakeLists.txt	2026-05-19 14:17:07.001803545 +0200
++++ b/CMakeLists.txt	2026-05-20 10:06:07.562429084 +0200
 @@ -13,7 +13,7 @@
  # cmake --build . --config Release
  # cmake --install .
@@ -9,15 +9,6 @@
  project(texmaker VERSION 6.0.1 LANGUAGES CXX C)
  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR})
  
-@@ -27,7 +27,7 @@
-     if (${COMPILEUSB} STREQUAL "yes")
-         set(INSTALL_DIR ${CMAKE_SOURCE_DIR}/deploy/linux_portable)
-     else()
--        set(INSTALL_DIR "/usr")
-+        set(INSTALL_DIR "/app")
-     endif()
- elseif (WIN32)
-     if (${COMPILEUSB} STREQUAL "yes")
 @@ -387,6 +387,7 @@
  set(CMAKE_AUTORCC ON)
  
@@ -26,3 +17,18 @@
  
  qt_standard_project_setup()
  
+@@ -1340,12 +1341,11 @@
+         USB_VERSION
+     )
+ endif()
+-set(PREFIX ${INSTALL_DIR})
+ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+-  set(CMAKE_INSTALL_PREFIX ${PREFIX} CACHE PATH "..." FORCE)
++  set(CMAKE_INSTALL_PREFIX ${INSTALL_DIR} CACHE PATH "..." FORCE)
+ endif()
+ target_compile_definitions(${PROJECT_NAME} PRIVATE
+-    PREFIX=\"${PREFIX}\"
++    PREFIX=\"${CMAKE_INSTALL_PREFIX}\"
+     )
+ if (${AUTHORIZELINUXQSTYLES} STREQUAL "yes")
+ target_compile_definitions(${PROJECT_NAME} PRIVATE
