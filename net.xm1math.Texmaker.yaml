@@ -14,7 +14,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --filesystem=xdg-documents
-  - --env=TEXMFCACHE=$XDG_CACHE_HOME
+  - --env=TEXMFVAR=$XDG_CACHE_HOME
 cleanup:
   - /include
   - '*.la'
