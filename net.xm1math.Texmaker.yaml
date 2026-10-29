@@ -24,7 +24,7 @@ cleanup-commands:
 
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '26.08'
+    version: '25.08'
     directory: texlive # this is relative to /app
 
 modules:
