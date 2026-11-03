@@ -68,7 +68,7 @@ modules:
         x-checker-data:
           type: html
           url: https://www.xm1math.net/texmaker/download.html
-          version-pattern: DOWNLOAD version ([\d\.]+)
+          version-pattern: 'texmaker-([0-9.]+)\.tar\.bz2'
           url-template: https://www.xm1math.net/texmaker/texmaker-$version.tar.bz2
       - type: file
         path: wrapper/texmaker-wrapper
